@@ -30,3 +30,13 @@ La segona línia imprimirà:
 **Benvingut, Jordi!**
 
 i després farà un salt de línia.
+
+### 3. Per què són diferents?
+
+Les cometes simples (`' '`) no permeten interpolar variables ni interpreten `\n` com un salt de línia. En canvi, les cometes dobles (`" "`) sí que interpreten les variables i les seqüències especials.
+
+Per tant, la sortida conjunta serà:
+
+**Benvingut, $nom!\nBenvingut, Jordi!**
+
+En aquest exercici no es produeix cap Warning ni cap error i l'execució finalitza normalment.
