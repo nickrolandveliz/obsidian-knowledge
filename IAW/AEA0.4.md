@@ -31,7 +31,7 @@ La segona línia imprimirà:
 
 i després farà un salt de línia.
 
-### 3. Per què són diferents?
+### 3. Explica breument per què són diferents?
 
 Les cometes simples (`' '`) no permeten interpolar variables ni interpreten `\n` com un salt de línia. En canvi, les cometes dobles (`" "`) sí que interpreten les variables i les seqüències especials.
 
