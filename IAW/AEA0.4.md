@@ -75,8 +75,7 @@ En PHP 8.x imprimirà:
 
 però també generarà un Warning semblant a:
 
-*Warning: A non-numeric value encountered
-```
+**Warning: A non-numeric value encountered**
 
 Això passa perquè la cadena comença pel valor numèric `10`, que PHP utilitza per fer l'operació, però la resta de la cadena (`gossos`) no és numèrica. El Warning no atura l'execució.
 
@@ -84,15 +83,11 @@ Aquest comportament pot presentar diferències segons la versió de PHP utilitza
 
 ### 4. Què imprimirà la Línia 4?
 
-```
-echo 10 + 5 . " gossos";
-```
+**echo 10 + 5 . " gossos";
 
 Imprimirà:
 
-```
-15 gossos
-```
+**15 gossos
 
 Primer es realitza `10 + 5`, que dona `15`, i després aquest resultat es concatena amb `" gossos"`.
 
@@ -104,15 +99,11 @@ Primer es realitza `10 + 5`, que dona `15`, i després aquest resultat es concat
 
 La variable `$nom_global` no està definida dins de la funció. En PHP 8.x apareixerà un Warning semblant a:
 
-```
-Warning: Undefined variable $nom_global
-```
+**Warning: Undefined variable $nom_global
 
 La instrucció `echo` imprimirà:
 
-```
-Hola, 
-```
+**Hola,** 
 
 El Warning no és fatal i, per tant, l'execució pot continuar.
 
@@ -124,22 +115,20 @@ Perquè `$nom_global` està declarada fora de la funció i té àmbit global. Le
 
 Una primera manera és utilitzar `global`:
 
-```
-function saludar() {
+
+**function saludar() {
     global $nom_global;
     echo "Hola, " . $nom_global;
 }
-```
 
 Una segona manera és passar la variable com a paràmetre:
 
-```
-function saludar($nom) {
+**function saludar($nom) {
     echo "Hola, " . $nom;
 }
 
 saludar($nom_global);
-```
+
 
 La segona opció permet que la funció rebi explícitament la informació que necessita.
 
@@ -151,9 +140,7 @@ La segona opció permet que la funció rebi explícitament la informació que ne
 
 Conté:
 
-```
-pomes
-```
+**pomes
 
 `$fruita` representa la clau de l'array.
 
@@ -161,20 +148,18 @@ pomes
 
 Conté:
 
-```
-5
-```
+**5
 
 `$quantitat` representa el valor associat a la clau `"pomes"`.
 
 ### 3. Escriu la sortida completa i exacta que produirà aquest script.
 
-```
-Queden 5 de pomes.
+
+**Queden 5 de pomes.
 Queden 10 de peres.
 Queden 0 de taronges.
 CAL REPOSAR: taronges!
-```
+
 
 El `foreach` recorre totes les parelles clau-valor. Quan `$quantitat` val `0`, es compleix la condició de l'`if` i s'imprimeix el missatge de reposició.
 
@@ -188,9 +173,7 @@ No es produeix cap Warning ni cap error.
 
 Imprimirà:
 
-```
-ID URL: 123
-```
+**ID URL: 123
 
 El valor `123` està inclòs a la URL (`processar.php?id=123`) i es recupera amb `$_GET['id']`.
 
@@ -198,9 +181,7 @@ El valor `123` està inclòs a la URL (`processar.php?id=123`) i es recupera amb
 
 Imprimirà:
 
-```
-Nom Formulari: Carles
-```
+**Nom Formulari: Carles
 
 El formulari s'ha enviat amb el mètode POST i el camp `usuari` conté el valor `"Carles"`. Per això es pot recuperar amb `$_POST['usuari']`.
 
@@ -208,21 +189,16 @@ El formulari s'ha enviat amb el mètode POST i el camp `usuari` conté el valor 
 
 El formulari no conté cap camp POST anomenat `id`. Per tant:
 
-```
-$_POST['id']
-```
+**$_POST['id']
 
 no existeix i en PHP 8.x es generarà un Warning semblant a:
 
-```
-Warning: Undefined array key "id"
-```
+
+**Warning: Undefined array key "id"
 
 Després s'imprimirà:
 
-```
-ID Formulari:
-```
+**ID Formulari:
 
 sense cap valor.
 
@@ -236,24 +212,18 @@ Això passa perquè l'`id=123` s'ha enviat mitjançant la URL i, per tant, està
 
 Primer s'imprimirà:
 
-```
-Inici Codi A
-```
+**Inici Codi A
 
 Quan s'executi:
 
-```
-include 'config.php';
-```
+**include 'config.php';
 
 PHP generarà avisos perquè `config.php` no existeix. De manera simplificada, la sortida serà:
 
-```
-Inici Codi A
+**Inici Codi A
 Warning: include(config.php): Failed to open stream...
 Warning: include(): Failed opening 'config.php'...
 Final Codi A
-```
 
 El text exacte dels Warnings pot variar segons la versió, configuració i ruta del sistema.
 
