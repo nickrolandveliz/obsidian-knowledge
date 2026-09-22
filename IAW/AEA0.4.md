@@ -233,31 +233,25 @@ L'important és que `include` genera avisos, però **l'execució continua**, i p
 
 Primer s'imprimirà:
 
-```
-Inici Codi B
-```
+**Inici Codi B
 
 Quan s'executi:
 
-```
-require 'config.php';
-```
+**require 'config.php';
 
 PHP no podrà trobar el fitxer i generarà un Warning i un error fatal. De manera simplificada:
 
-```
-Inici Codi B
+
+**Inici Codi B
 Warning: require(config.php): Failed to open stream...
 Fatal error: Uncaught Error: Failed opening required 'config.php'...
-```
+
 
 L'execució s'atura, per tant:
 
-```
-Final Codi B
-```
+**Final Codi B
 
-**no s'imprimirà.**
+no s'imprimirà.
 
 ### 3. Quina és la diferència fonamental entre include i require quan un fitxer falla?
 
@@ -271,60 +265,56 @@ Quan falla `require`, es produeix un error que atura l'execució del programa.
 
 ### 1. Quina serà la sortida de print_r($array_a)?
 
-```
-Array
+
+**Array
 (
     [0] => a
     [1] => Y
     [2] => c
 )
-```
+
 
 ### 2. Quina serà la sortida de print_r($array_b)?
 
-```
-Array
+
+**Array
 (
     [0] => X
     [1] => b
     [2] => c
 )
-```
+
 
 `$array_c` tindrà el mateix contingut que `$array_a`:
 
-```
+**
 Array
 (
     [0] => a
     [1] => Y
     [2] => c
 )
-```
+
 
 ### 3. Explica per què $array_a ha canviat en modificar $array_c, però no en modificar $array_b.
 
 Quan fem:
 
-```
-$array_b = $array_a;
-```
+**$array_b = $array_a;
 
 l'assignació és per valor. Per això modificar `$array_b` no modifica `$array_a`.
 
 En canvi:
 
-```
-$array_c = &$array_a;
-```
+**$array_c = &$array_a;
 
 utilitza `&` per fer una assignació per referència. Això fa que `$array_c` faci referència a la mateixa variable que `$array_a`.
 
 Per tant, quan fem:
 
-```
-$array_c[1] = "Y";
-```
+
+**$array_c[1] = "Y";
+
 
 també canvia `$array_a[1]`.
 
@@ -340,9 +330,8 @@ Quan s'executa `getNom()`, PHP intenta retornar una variable local `$nom` que no
 
 En PHP 8.x apareixerà un Warning semblant a:
 
-```
-Warning: Undefined variable $nom
-```
+**Warning: Undefined variable $nom
+
 
 No s'imprimirà `"Elsa"`.
 
@@ -350,15 +339,13 @@ No s'imprimirà `"Elsa"`.
 
 El mètode `setNom()` modifica correctament la propietat de l'objecte:
 
-```
-$this->nom = $nou_nom;
-```
+**$this->nom = $nou_nom;
+
 
 Però `getNom()` intenta retornar:
 
-```
-$nom
-```
+**$nom
+
 
 que PHP interpreta com una variable local.
 
@@ -368,17 +355,15 @@ Per accedir a la propietat `nom` de l'objecte s'ha d'utilitzar `$this->nom`.
 
 S'ha de modificar així:
 
-```
-public function getNom() {
+**public function getNom() {
     return $this->nom;
 }
-```
+
 
 Ara `$this->nom` fa referència a la propietat `nom` de l'objecte actual i el programa imprimirà:
 
-```
-Elsa
-```
+**Elsa
+
 
 ---
 
@@ -388,9 +373,8 @@ Elsa
 
 Imprimirà:
 
-```
-Total instàncies: 3
-```
+**Total instàncies: 3
+
 
 S'han creat tres objectes i cada vegada que s'executa el constructor s'incrementa la propietat estàtica `$total_instancies`.
 
@@ -398,9 +382,7 @@ S'han creat tres objectes i cada vegada que s'executa el constructor s'increment
 
 Imprimirà:
 
-```
-Comptador C1: 1
-```
+**Comptador C1: 1
 
 Quan es crea `$c1`, el seu comptador propi passa de `0` a `1`.
 
@@ -408,15 +390,11 @@ Quan es crea `$c1`, el seu comptador propi passa de `0` a `1`.
 
 Imprimirà:
 
-```
-Comptador C3: 5
-```
+**Comptador C3: 5
 
 Inicialment el seu valor era `1`, però després s'executa:
 
-```
-$c3->comptador_propi = 5;
-```
+**$c3->comptador_propi = 5;
 
 i el seu valor passa a ser `5`.
 
@@ -428,11 +406,9 @@ En canvi, `$comptador_propi` és una propietat d'instància. Cada objecte té el
 
 La sortida completa serà:
 
-```
-Total instàncies: 3
+**Total instàncies: 3
 Comptador C1: 1
 Comptador C3: 5
-```
 
 ---
 
@@ -442,15 +418,11 @@ Comptador C3: 5
 
 Sí, funcionarà.
 
-```
-echo $g->getNomPrivat();
-```
+**echo $g->getNomPrivat();
 
 imprimirà:
 
-```
-ANIMAL
-```
+**ANIMAL
 
 La propietat `$nom_privat` és `private`, però el mètode `getNomPrivat()` està declarat dins de la mateixa classe `Animal`. Per tant, aquest mètode sí que pot accedir a la propietat privada.
 
@@ -458,9 +430,7 @@ La propietat `$nom_privat` és `private`, però el mètode `getNomPrivat()` est�
 
 No funcionarà.
 
-```
-echo $g->edat_protegida;
-```
+**echo $g->edat_protegida;
 
 intenta accedir a una propietat `protected` des de fora de la classe.
 
@@ -468,9 +438,7 @@ Una propietat `protected` només és accessible des de la mateixa classe o des d
 
 En PHP 8.x es produirà un error fatal semblant a:
 
-```
-Fatal error: Uncaught Error: Cannot access protected property Gos::$edat_protegida
-```
+**Fatal error: Uncaught Error: Cannot access protected property Gos::$edat_protegida
 
 L'execució s'atura en aquesta línia.
 
@@ -480,19 +448,15 @@ Aquí hi ha una **incoherència en l'enunciat**.
 
 Executant exactament el codi proporcionat, la Línia F:
 
-```
-$g->testAccedir();
-```
+**$g->testAccedir();
 
 **no arriba a executar-se**, perquè l'execució ja s'ha aturat abans a la Línia E en intentar accedir a `$edat_protegida` des de fora de la classe.
 
 Si comentéssim la Línia E per poder executar `testAccedir()`, tindríem:
 
-```
-echo $this->nom_privat;      // Línia A
+**echo $this->nom_privat;      // Línia A
 echo $this->edat_protegida;  // Línia B
 echo $this->color_public;    // Línia C
-```
 
 La **Línia A** intenta accedir des de `Gos` a `$nom_privat`, que és una propietat `private` declarada a `Animal`. Les propietats `private` només són accessibles directament des de la classe que les declara.
 
