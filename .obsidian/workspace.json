@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "IAW/AEA0.2.md",
+                "file": "IAW/AEA0.4.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "AEA0.2"
+              "title": "AEA0.4"
             }
           }
         ],
@@ -216,11 +216,15 @@
   },
   "active": "6eb128cfc144e4b1",
   "lastOpenFiles": [
+    "IAW/AEA0.3.md",
+    "IAW/AEA0.4.md",
+    "Sense títol.md",
+    "Pasted image 20260922234925.png",
+    "IAW/AEA0.2.md",
     "Pasted image 20260921190505.png",
     "Pasted image 20260921190109.png",
     "Pasted image 20260921185744.png",
     "IAW/AEA0.1.md",
-    "IAW/AEA0.2.md",
     "Pasted image 20260921170133.png",
     "index.md",
     "Hola.md",
