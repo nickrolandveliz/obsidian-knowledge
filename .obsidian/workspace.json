@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "IAW/AEA0.4.md",
+                "file": "Projecte Intermodular/Carta de presentació.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "AEA0.4"
+              "title": "Carta de presentació"
             }
           }
         ]
@@ -201,18 +201,20 @@
   },
   "active": "6eb128cfc144e4b1",
   "lastOpenFiles": [
-    "IAW/AEA0.1.md",
+    "index.md",
+    "Projecte Intermodular/Carta de presentació.md",
+    "Pasted image 20260921170133.png",
     "IAW/AEA0.4.md",
+    "Hola.md",
+    "Projecte Intermodular",
+    "IAW/AEA0.1.md",
     "IAW/AEA0.2.md",
     "IAW/AEA0.3.md",
     "Pasted image 20260921190109.png",
     "Pasted image 20260921190505.png",
     "Pasted image 20260921185744.png",
-    "Pasted image 20260921170133.png",
     "Sense títol.md",
     "Pasted image 20260922234925.png",
-    "index.md",
-    "Hola.md",
     "IAW"
   ]
 }
